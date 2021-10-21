@@ -37,7 +37,7 @@ program DEv1
 	real(8) ::rnd
 	real(8), dimension(3) :: x
 	integer :: i
-	integer, parameter :: m=500, n=2
+	integer, parameter :: m=10000, n=2
 	real(8), parameter, dimension(n) :: bL= -1d0, bU = 1d0
 	real(8), dimension(m,n) :: A
 	
