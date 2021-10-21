@@ -2,7 +2,7 @@ module funciones_mod
 	implicit none
 	
 	private
-	public :: rand01
+	public :: rand01, X0
 	
 	contains
 	function X0(m,bL,bU) result (Xr)
@@ -34,5 +34,17 @@ end module funciones_mod
 program DEv1
 	use funciones_mod
 	implicit none
+	real(8) ::rnd
+	real(8), dimension(3) :: x
+	integer :: i
+	integer, parameter :: m=500, n=2
+	real(8), parameter, dimension(n) :: bL= -1d0, bU = 1d0
+	real(8), dimension(m,n) :: A
+	
+	A = X0(m, bL, bU)
+	
+	do i=1,m
+		write(*,'(*(f0.4,2x))') A(i,:)
+	end do
 	
 end program DEv1
